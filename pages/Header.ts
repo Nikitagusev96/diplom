@@ -36,13 +36,13 @@ export class Header {
         this.page = page;
 
         // Header links
-        this.deliveryAndPayment = page.locator('html > body > header > div:nth-of-type(1) > div > div:nth-of-type(1) > nav > div:nth-of-type(1) > a');
-        this.postavshikam = page.locator('html > body > header > div:nth-of-type(1) > div > div:nth-of-type(1) > nav > div:nth-of-type(2) > a');
-        this.contact = page.locator('html > body > header > div:nth-of-type(1) > div > div:nth-of-type(1) > nav > div:nth-of-type(4) > a');
-        this.cart = page.locator('html > body > header > div:nth-of-type(2) > div:nth-of-type(6) > div > div > a > span > div');
-        this.favourites = page.locator('html > body > header > div:nth-of-type(2) > div:nth-of-type(5) > a > span:nth-of-type(2)');
-        this.enter = page.locator('html > body > header > div:nth-of-type(2) > div:nth-of-type(4) > a > span > span');
-        this.optovikam = page.locator('header').getByText('Оптовикам');
+        this.deliveryAndPayment = page.locator('//nav[@class="navigation__items"]//a[contains(@href, "/delivery_and_payment/")]');
+        this.postavshikam = page.locator('//nav[@class="navigation__items"]//a[contains(@href, "/supplier/")]');
+        this.optovikam = page.locator('//nav[@class="navigation__items"]//a[contains(@href, "/b2b/")]');
+        this.contact = page.locator('//nav[@class="navigation__items"]//a[contains(@href, "/contacts/")]');
+        this.cart = page.locator('(//div[@id="basket-area"]/a[@href="/cart/" and contains(@class, "basket-link")])[1]');
+        this.favourites = page.locator('//div[@class="header__middle--favorites"]');
+
 
         // Catalog
         this.catalogOpenButton = page.locator('//div[@id="header__middle--catalog-menu"]');

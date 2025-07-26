@@ -99,10 +99,51 @@ test.describe('Проверка ссылок в футере', () => {
 
     });
 
+    test('Переход в "О компании"', async ({ page }) => {
+        const footer = new Footer(page);
+        await footer.company.click();
+        await expect(page).toHaveURL(/company/);
+        await expect(page).toHaveTitle(/О компании | Спорт Ферма - Интернет-магазин Спорт Ферма/);
 
+    });
+    test('Переход в "О брендах"', async ({ page }) => {
+        const footer = new Footer(page);
+        await footer.brends.click();
+        await expect(page).toHaveURL(/brends/);
+        await expect(page).toHaveTitle(/Бренды | Спорт Ферма - Интернет-магазин Спорт Ферма/);
 
+    });
+    test('Переход в "Амбассадоры"', async ({ page }) => {
+        const footer = new Footer(page);
+        await footer.ambassadors.click();
+        await expect(page).toHaveURL(/ambassadors/);
+        await expect(page).toHaveTitle(/Амбассадоры | Спорт Ферма - Интернет-магазин Спорт Ферма/);
 
+    });
+    test('Переход в "Реквизиты"', async ({ page }) => {
+        const footer = new Footer(page);
+        await footer.requisites.click();
+        await expect(page).toHaveURL(/requisites/);
+        await expect(page).toHaveTitle(/Реквизиты | Спорт Ферма - Интернет-магазин Спорт Ферма/);
 
-
+    });
+    test('Переход в "Блог"', async ({ page }) => {
+        const footer = new Footer(page);
+        await footer.blog.click();
+        await expect(page).toHaveURL(/articles/);
+        await expect(page).toHaveTitle(/Блог Спорт Фермы - Интернет-магазин Спорт Ферма/);
+    });
+    test('Переход в "Где купить"', async ({ page }) => {
+        const footer = new Footer(page);
+        await footer.where_buy.click();
+        await expect(page).toHaveURL(/where_can_one_buy/);
+        await expect(page).toHaveTitle(/Где купить | Спорт Ферма - Интернет-магазин Спорт Ферма/);
+    });
+    test('Переход в "Контакты"', async ({ page }) => {
+        const footer = new Footer(page);
+        await footer.contacts.click();
+        await expect(page).toHaveURL(/contacts/);
+        await expect(page).toHaveTitle(/Контакты | Интернет-магазин Спорт Ферма - Интернет-магазин Спорт Ферма/);
+    });
 });
 
