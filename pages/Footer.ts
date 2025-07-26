@@ -1,4 +1,4 @@
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
 export class Footer {
     readonly page: Page;
@@ -48,11 +48,80 @@ export class Footer {
         this.contacts = page.locator('//div[@id="bottomMenuFooterAbout"]//a[contains(@href, "/contacts/")]');
     }
     async checkAllFoterLinks() {
+    await this.catalog.click();
+    await expect(this.page).toHaveTitle(/Каталог спортивного питания | Спорт Ферма/);
+    await expect(this.page).toHaveURL(/product/);
 
+    await this.sale.click();
+    await expect(this.page).toHaveURL(/rasprodazha/);
+    await expect(this.page).toHaveTitle(/Спортивное питание со скидками до 50% в интернет-магазине Спорт Ферма c доставкой по выгодной цене/);
 
+    await this.energy.click();
+    await expect(this.page).toHaveTitle(/Энергия и выносливость - купить в интернет-магазине SPORTFERMA c кэшбэком и доставкой по России/);
+    await expect(this.page).toHaveURL(/energiya_i_vynoslivost/);
 
+    await this.muscles.click();
+    await expect(this.page).toHaveTitle(/Восстановление мышц после тренировки – BCAA, протеин, гейнеры, аминокислоты | SPORTFERMA/);
+    await expect(this.page).toHaveURL(/myshtsy_i_vosstanovlenie/);
 
+    await this.fitness.click();
+    await expect(this.page).toHaveTitle(/Питание для ЗОЖ – купить в интернет-магазине Спорт Ферма c доставкой по выгодной цене/);
+    await expect(this.page).toHaveURL(/fitnes_pitanie/);
 
+    await this.vitamins.click();
+    await expect(this.page).toHaveTitle(/Витамины и минералы - купить в интернет-магазине SPORTFERMA c кэшбэком и доставкой по России/);
+    await expect(this.page).toHaveURL(/vitaminy_i_mineraly/);
 
+    await this.nutritionSets.click();
+    await expect(this.page).toHaveTitle(/Выгодные наборы спортивного питания – купить в интернет-магазине Спорт Ферма c доставкой по выгодной цене/);
+    await expect(this.page).toHaveURL(/nabory_pitaniya/);
 
+    await this.massage.click();
+    await expect(this.page).toHaveTitle(/Массажное оборудование и девайсы - купить в интернет-магазине SPORTFERMA c кэшбэком и доставкой по России/);
+    await expect(this.page).toHaveURL(/massazhnoe_oborudovanie_i_devaysy/);
+
+    await this.cosmetics.click();
+    await expect(this.page).toHaveTitle(/Спортивная косметика - купить в интернет-магазине SPORTFERMA c кэшбэком и доставкой по России/);
+    await expect(this.page).toHaveURL(/sportivnaya_kosmetika/);
+
+    await this.touristFood.click();
+    await expect(this.page).toHaveTitle(/Купить туристическое питание – сублимированные продукты, сухпайки и консервы | SPORTFERMA/);
+    await expect(this.page).toHaveURL(/turisticheskoe_pitanie/);
+
+    await this.gadgets.click();
+    await expect(this.page).toHaveTitle(/Часы и гаджеты - купить в интернет-магазине SPORTFERMA c кэшбэком и доставкой по России/);
+    await expect(this.page).toHaveURL(/chasy_i_gadzhety/);
+
+    await this.accessories.click();
+    await expect(this.page).toHaveTitle(/Аксессуары для спорта – купить в интернет-магазине Спорт Ферма c доставкой по выгодной цене/);
+    await expect(this.page).toHaveURL(/aksessuary/);
+
+    await this.company.click();
+    await expect(this.page).toHaveTitle(/О компании | Спорт Ферма - Интернет-магазин Спорт Ферма/);
+    await expect(this.page).toHaveURL(/company/);
+
+    await this.brends.click();
+    await expect(this.page).toHaveURL(/brends/);
+    await expect(this.page).toHaveTitle(/Бренды | Спорт Ферма - Интернет-магазин Спорт Ферма/);
+
+    await this.ambassadors.click();
+    await expect(this.page).toHaveURL(/ambassadors/);
+    await expect(this.page).toHaveTitle(/Амбассадоры | Спорт Ферма - Интернет-магазин Спорт Ферма/);
+
+    await this.requisites.click();
+    await expect(this.page).toHaveURL(/requisites/);
+    await expect(this.page).toHaveTitle(/Реквизиты | Спорт Ферма - Интернет-магазин Спорт Ферма/);
+
+    await this.blog.click();
+    await expect(this.page).toHaveURL(/articles/);
+    await expect(this.page).toHaveTitle(/Блог Спорт Фермы - Интернет-магазин Спорт Ферма/);
+
+    await this.where_buy.click();
+    await expect(this.page).toHaveURL(/where_can_one_buy/);
+    await expect(this.page).toHaveTitle(/Где купить | Спорт Ферма - Интернет-магазин Спорт Ферма/);
+
+    await this.contacts.click();
+    await expect(this.page).toHaveURL(/contacts/);
+    await expect(this.page).toHaveTitle(/Контакты | Интернет-магазин Спорт Ферма - Интернет-магазин Спорт Ферма/);
+    }
 }
