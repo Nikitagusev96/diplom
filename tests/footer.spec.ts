@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test,} from '@playwright/test';
 import { Footer } from '../pages/Footer';
 
 test.describe('Проверка ссылок в футере', () => {
