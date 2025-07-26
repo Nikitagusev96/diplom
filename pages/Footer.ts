@@ -22,10 +22,10 @@ export class Footer {
         this.catalog = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(2) > div > div > a');
         this.sale = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(1) > div > div > a');
         this.energy = page.locator('//div[@id="bottomMenuFooterCatalog"]//a[contains(@href, "/product/energiya_i_vynoslivost/")]');
-        this.muscles = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(3) > div > div > a');
-        this.fitness = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(4) > div > div > a');
-        this.vitamins = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(5) > div > div > a');
-        this.nutritionSets = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(6) > div > div > a');
+        this.muscles = page.locator('//div[@id="bottomMenuFooterCatalog"]//a[contains(@href, "/product/myshtsy_i_vosstanovlenie/")]');
+        this.fitness = page.locator('//div[@id="bottomMenuFooterCatalog"]//a[contains(@href, "/product/fitnes_pitanie/")]');
+        this.vitamins = page.locator('//div[@id="bottomMenuFooterCatalog"]//a[contains(@href, "/product/vitaminy_i_mineraly/")]');
+        this.nutritionSets = page.locator('//div[@id="bottomMenuFooterCatalog"]//a[contains(@href, "/product/nabory_pitaniya/")]');
         this.massage = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(7) > div > div > a');
         this.cosmetics = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(8) > div > div > a');
         this.touristFood = page.locator('html > body > footer > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(3) > div > div > div:nth-of-type(3) > div:nth-of-type(9) > div > div > a');
