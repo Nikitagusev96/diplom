@@ -3,7 +3,7 @@ import { Locator, Page, expect } from '@playwright/test';
 export class Header {
     readonly page: Page;
 
-    // Header links
+    // Header
     readonly deliveryAndPayment: Locator;
     readonly postavshikam: Locator;
     readonly contact: Locator;
@@ -35,7 +35,7 @@ export class Header {
     constructor(page: Page) {
         this.page = page;
 
-        // Header links
+        // Header
         this.deliveryAndPayment = page.locator('//nav[@class="navigation__items"]//a[contains(@href, "/delivery_and_payment/")]');
         this.postavshikam = page.locator('//nav[@class="navigation__items"]//a[contains(@href, "/supplier/")]');
         this.optovikam = page.locator('//nav[@class="navigation__items"]//a[contains(@href, "/b2b/")]');

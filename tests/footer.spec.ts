@@ -10,5 +10,12 @@ test.describe('Проверка ссылок в футере', () => {
     test('Кликабельность всех ссылок в футере', async () => {
         await footer.checkAllFoterLinks();
     });
+    test('Кликабельность социальных сетей в футере', async () => {
+        await footer.checkSocialFoterLinks();
+    });
+
+
+
+
 });
 

@@ -22,6 +22,9 @@ export class Footer {
     readonly blog: Locator;
     readonly where_buy: Locator;
     readonly contacts: Locator;
+    readonly socialVk: Locator;
+    readonly socialTg: Locator;
+    readonly tg: Locator;
 
 
     constructor(page: Page) {
@@ -46,6 +49,11 @@ export class Footer {
         this.blog = page.locator('//div[@id="bottomMenuFooterAbout"]//a[contains(@href, "/articles/")]');
         this.where_buy = page.locator('//div[@id="bottomMenuFooterAbout"]//a[contains(@href, "/where_can_one_buy/")]');
         this.contacts = page.locator('//div[@id="bottomMenuFooterAbout"]//a[contains(@href, "/contacts/")]');
+
+        //соициальные сети
+        this.socialVk = page.locator('//div[@class="footer-social-line"]//a[contains(@href,"https://vk.com/sportferma")]')
+        this.socialTg = page.locator('//div[@class="footer-social-line"]//a[contains(@href,"https://t.me/sportferma")]')
+
     }
     async checkAllFoterLinks() {
     await this.catalog.click();
@@ -124,4 +132,17 @@ export class Footer {
     await expect(this.page).toHaveURL(/contacts/);
     await expect(this.page).toHaveTitle(/Контакты | Интернет-магазин Спорт Ферма - Интернет-магазин Спорт Ферма/);
     }
+    async checkSocialFoterLinks() {
+    await this.socialVk.click();
+    await expect(this.page).toHaveURL(/sportferma/);
+
+    await this.socialTg.click();
+    await expect(this.page).toHaveURL(/sportferma/);
+
+
+
+    }
+
 }
+
+
