@@ -57,10 +57,10 @@ export class Authorization {
         await this.hidePasswordButon.click();
         //Вход
         await this.numberPhoneField.click();
-        await this.numberPhoneField.pressSequentially('test.sportferma@yandex.ru');
+        await this.numberPhoneField.pressSequentially('nikita-gusev-qa96@mail.ru');
 
         await this.codeSmsField.click()
-        await this.codeSmsField.pressSequentially('123123')
+        await this.codeSmsField.pressSequentially('Qwerty123')
 
         await this.enterButon.click()
         // выполнен выход в аккаунт

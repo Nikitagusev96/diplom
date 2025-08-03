@@ -138,9 +138,6 @@ export class Footer {
 
     await this.socialTg.click();
     await expect(this.page).toHaveURL(/sportferma/);
-
-
-
     }
 
 }
