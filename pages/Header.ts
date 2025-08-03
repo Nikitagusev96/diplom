@@ -28,7 +28,7 @@ export class Header {
     readonly enterByLoginAndPasswordLink: Locator;
     readonly regButoon: Locator;
     readonly descpriptionRegText: Locator;
-    readonly closeModelEntetAccountButon: Locator;
+    readonly closeModalEnterAccountButton: Locator;
     readonly showPasswordButon: Locator;
     readonly hidePasswordButon: Locator;
 
@@ -60,7 +60,7 @@ export class Header {
         this.enterByLoginAndPasswordLink = page.locator('//a[@href="/auth/login/"]');
         this.regButoon = page.locator('.register');
         this.descpriptionRegText = page.locator('//div[@class="more_text_small"]');
-        this.closeModelEntetAccountButon = page.locator('//span[contains(@class, "fa-close")]');
+        this.closeModalEnterAccountButton = page.locator('//span[contains(@class, "fa-close")]');
         this.showPasswordButon = page.locator('//span[@title="Показать пароль"]');
         this.hidePasswordButon = page.locator('//span[@title="Скрыть пароль"]');
     }
@@ -108,10 +108,13 @@ export class Header {
         await expect(this.enterByLoginAndPasswordLink).toBeVisible();
         await expect(this.regButoon).toBeVisible();
         await expect(this.descpriptionRegText).toBeVisible();
-        await expect(this.closeModelEntetAccountButon).toBeVisible();
+        await expect(this.closeModalEnterAccountButton).toBeVisible();
         await expect(this.showPasswordButon).toBeVisible();
         await this.showPasswordButon.click();
         await expect(this.hidePasswordButon).toBeVisible();
         await this.hidePasswordButon.click();
     }
+}
+
+export class Authorization {
 }
