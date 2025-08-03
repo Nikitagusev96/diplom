@@ -30,34 +30,99 @@ export class Buy_Product {
 
     async buy_product() {
         await this.page.goto('https://sportferma.com/product/gel_gu_original_shokoladnoe_bezumie_1_sht/');
-        await this.inbasketElement.click()
+        await this.inbasketElement.click();
     //     if (await this.inbasketElement.isVisible()) {
     //         await this.inbasketElement.click();
     //     } else {
     //         await this.cart.click();
     //     }
     //     await expect(this.cartCount).toBeVisible();
-        await this.cart.click()
+        await this.cart.click();
         await expect(this.page).toHaveURL(/cart/);
         await expect(this.page).toHaveTitle(/Моя корзина - Интернет-магазин Спорт Ферма/);
         //перейти к оформлению
-        await expect(this.goToTheRegistration).toBeVisible()
-        await this.goToTheRegistration.click()
+        await expect(this.goToTheRegistration).toBeVisible();
+        await this.goToTheRegistration.click();
         await expect(this.page).toHaveURL(/order/);
         await expect(this.page).toHaveTitle(/Оформление заказа - Интернет-магазин Спорт Ферма/);
 
-        await this.surnameName.clear()
-        await this.surnameName.pressSequentially('Никита Гусев')
-        await this.number.clear()
-        await this.number.pressSequentially('9106955536')
-        await this.email.clear()
-        await this.email.pressSequentially('nikita-gusev-qa96@mail.ru')
-        await this.payOrder.click()
-        // await expect(this.page).toHaveTitle(/Оплата заказа — ЮKassa/);
+        await this.surnameName.clear();
+        await this.surnameName.pressSequentially('Никита Гусев');
+        await this.number.clear();
+        await this.number.pressSequentially('9106955536');
+        await this.email.clear();
+        await this.email.pressSequentially('nikita-gusev-qa96@mail.ru');
+        await this.payOrder.click();
+        await expect(this.page.getByText('ООО "СПОРТ ФЕРМА"')).toBeVisible();
 
+    }
+    async name_negative() {
+        await this.page.goto('https://sportferma.com/product/gel_gu_original_shokoladnoe_bezumie_1_sht/');
+        await this.inbasketElement.click();
+        await this.cart.click();
+        await expect(this.page).toHaveURL(/cart/);
+        await expect(this.page).toHaveTitle(/Моя корзина - Интернет-магазин Спорт Ферма/);
+        //перейти к оформлению
+        await expect(this.goToTheRegistration).toBeVisible();
+        await this.goToTheRegistration.click();
+        await expect(this.page).toHaveURL(/order/);
+        await expect(this.page).toHaveTitle(/Оформление заказа - Интернет-магазин Спорт Ферма/);
 
+        await this.surnameName.clear();
 
+        await this.number.clear();
+        await this.number.pressSequentially('9106955536');
+        await this.email.clear();
+        await this.email.pressSequentially('nikita-gusev-qa96@mail.ru');
+        await this.payOrder.click();
+        await expect(
+            this.page.locator('div.alert.alert-danger').filter({ hasText: 'Поле "Имя и фамилия" обязательно для заполнения' })
+        ).toBeVisible();
+    }
+    async number_negative() {
+        await this.page.goto('https://sportferma.com/product/gel_gu_original_shokoladnoe_bezumie_1_sht/');
+        await this.inbasketElement.click();
+        await this.cart.click();
+        await expect(this.page).toHaveURL(/cart/);
+        await expect(this.page).toHaveTitle(/Моя корзина - Интернет-магазин Спорт Ферма/);
+        //перейти к оформлению
+        await expect(this.goToTheRegistration).toBeVisible();
+        await this.goToTheRegistration.click();
+        await expect(this.page).toHaveURL(/order/);
+        await expect(this.page).toHaveTitle(/Оформление заказа - Интернет-магазин Спорт Ферма/);
 
+        await this.surnameName.clear();
+        await this.surnameName.pressSequentially('Никита Гусев');
+        await this.number.clear();
 
+        await this.email.clear();
+        await this.email.pressSequentially('nikita-gusev-qa96@mail.ru');
+        await this.payOrder.click();
+        await expect(
+            this.page.locator('div.alert.alert-danger').filter({ hasText: 'Поле "Телефон" обязательно для заполнения' })
+        ).toBeVisible();
+    }
+    async email_negative() {
+        await this.page.goto('https://sportferma.com/product/gel_gu_original_shokoladnoe_bezumie_1_sht/');
+        await this.inbasketElement.click();
+        await this.cart.click();
+        await expect(this.page).toHaveURL(/cart/);
+        await expect(this.page).toHaveTitle(/Моя корзина - Интернет-магазин Спорт Ферма/);
+        //перейти к оформлению
+        await expect(this.goToTheRegistration).toBeVisible();
+        await this.goToTheRegistration.click();
+        await expect(this.page).toHaveURL(/order/);
+        await expect(this.page).toHaveTitle(/Оформление заказа - Интернет-магазин Спорт Ферма/);
+
+        await this.surnameName.clear();
+        await this.surnameName.pressSequentially('Никита Гусев');
+        await this.number.clear();
+        await this.number.pressSequentially('9106955536');
+        await this.email.clear();
+
+        await this.payOrder.click();
+        await expect(
+            this.page.locator('div.alert.alert-danger').filter({ hasText: 'Поле "Электронная почта" обязательно для заполнения' })
+        ).toBeVisible();
     }
 }
