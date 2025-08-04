@@ -17,28 +17,16 @@ test('Покупка товара авторизованным пользова�
 
 test('Покупка товара Имя и фамилия пустое ', async ({ page }) => {
     await page.goto('https://sportferma.com');
-
-    const authorization = new Authorization(page);
     const name_negative = new Buy_Product(page);
-
-    await authorization.authorization();
     await name_negative.name_negative();
 });
 test('Покупка товара телефон пустое ', async ({ page }) => {
     await page.goto('https://sportferma.com');
-
-    const authorization = new Authorization(page);
     const number_negative = new Buy_Product(page);
-
-    await authorization.authorization();
     await number_negative.number_negative();
 });
 test('Покупка товара email пустое ', async ({ page }) => {
     await page.goto('https://sportferma.com');
-
-    const authorization = new Authorization(page);
     const email_negative = new Buy_Product(page);
-
-    await authorization.authorization();
     await email_negative.email_negative();
 });

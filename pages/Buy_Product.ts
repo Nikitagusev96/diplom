@@ -31,12 +31,6 @@ export class Buy_Product {
     async buy_product() {
         await this.page.goto('https://sportferma.com/product/gel_gu_original_shokoladnoe_bezumie_1_sht/');
         await this.inbasketElement.click();
-    //     if (await this.inbasketElement.isVisible()) {
-    //         await this.inbasketElement.click();
-    //     } else {
-    //         await this.cart.click();
-    //     }
-    //     await expect(this.cartCount).toBeVisible();
         await this.cart.click();
         await expect(this.page).toHaveURL(/cart/);
         await expect(this.page).toHaveTitle(/Моя корзина - Интернет-магазин Спорт Ферма/);
