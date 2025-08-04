@@ -68,7 +68,6 @@ export class User_Registration {
         await this.passwordField.fill(this.password);
         await this.confirmPasswordField.fill(this.password);
 
-        await this.checkbox.click();
         await this.registerButton.click();
 
         // await expect(this.myOfficeLink).toBeVisible();
@@ -96,7 +95,7 @@ export class User_Registration {
         await this.passwordField.fill(this.password);
         await this.confirmPasswordField.fill(this.password);
 
-        await this.checkbox.click();
+
         await this.registerButton.click();
         await expect(this.error_name).toBeVisible()
     }
@@ -117,7 +116,7 @@ export class User_Registration {
         await this.passwordField.fill(this.password);
         await this.confirmPasswordField.fill(this.password);
 
-        await this.checkbox.click();
+
         await this.registerButton.click();
         await expect(this.error_email).toBeVisible()
     }
@@ -137,7 +136,7 @@ export class User_Registration {
         await this.passwordField.fill(this.password);
         await this.confirmPasswordField.fill(this.password);
 
-        await this.checkbox.click();
+
         await this.registerButton.click();
         await expect(this.error_number).toBeVisible()
     }
@@ -157,7 +156,7 @@ export class User_Registration {
         await this.phoneField.fill('');
         await this.phoneField.fill(this.phone);
 
-        await this.checkbox.click();
+
         await this.registerButton.click();
         await expect(this.error_password).toBeVisible()
     }
@@ -180,7 +179,7 @@ export class User_Registration {
         await this.passwordField.fill(this.password);
         //Пароль будет отличаться
         await this.confirmPasswordField.fill('qwerty123');
-        await this.checkbox.click();
+
         await this.registerButton.click();
         await expect(this.error_confirmPassword).toBeVisible()
     }
