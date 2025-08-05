@@ -60,9 +60,9 @@ export class Footer {
     await expect(this.page).toHaveTitle(/Каталог спортивного питания | Спорт Ферма/);
     await expect(this.page).toHaveURL(/product/);
 
-    // await this.sale.click();
-    // await expect(this.page).toHaveURL(/rasprodazha/);
-    // await expect(this.page).toHaveTitle(/Спортивное питание со скидками до 50% в интернет-магазине Спорт Ферма c доставкой по выгодной цене/);
+    await this.sale.click();
+    await expect(this.page).toHaveURL(/rasprodazha/);
+    await expect(this.page).toHaveTitle(/Спортивное питание со скидками до 50% в интернет-магазине Спорт Ферма c доставкой по выгодной цене/);
 
     await this.energy.click();
     await expect(this.page).toHaveTitle(/Энергия и выносливость - купить в интернет-магазине SPORTFERMA c кэшбэком и доставкой по России/);
@@ -131,7 +131,7 @@ export class Footer {
     await this.contacts.click();
     await expect(this.page).toHaveURL(/contacts/);
     await expect(this.page).toHaveTitle(/Контакты | Интернет-магазин Спорт Ферма - Интернет-магазин Спорт Ферма/);
-    }
+     }
     async checkSocialFoterLinks() {
     await this.socialVk.click();
     await expect(this.page).toHaveURL(/sportferma/);

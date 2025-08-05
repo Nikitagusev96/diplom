@@ -46,9 +46,9 @@ export class Buy_Product {
         await this.number.pressSequentially('9106955536');
         await this.email.clear();
         await this.email.pressSequentially('nikita-gusev-qa96@mail.ru');
-        // Раскомитеть перед регрессом
-        // await this.payOrder.click();
-        // await expect(this.page.getByText('ООО "СПОРТ ФЕРМА"')).toBeVisible();
+        //Раскомитеть перед регрессом
+        await this.payOrder.click();
+        await expect(this.page.getByText('ООО "СПОРТ ФЕРМА"')).toBeVisible();
 
     }
     async name_negative() {

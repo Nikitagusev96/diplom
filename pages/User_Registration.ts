@@ -70,12 +70,12 @@ export class User_Registration {
 
         await this.registerButton.click();
 
-        // await expect(this.myOfficeLink).toBeVisible();
-        //
-        // await this.myOfficeLink.click();
-        //
-        // await expect(this.page).toHaveURL(new RegExp('/personal/cabinet'));
-        // await expect(this.page).toHaveTitle(/Личный кабинет - Интернет-магазин Спорт Ферма/i);
+        await expect(this.myOfficeLink).toBeVisible();
+
+        await this.myOfficeLink.click();
+
+        await expect(this.page).toHaveURL(new RegExp('/personal/cabinet'));
+        await expect(this.page).toHaveTitle(/Личный кабинет - Интернет-магазин Спорт Ферма/i);
     }
 
     async negative_name() {
